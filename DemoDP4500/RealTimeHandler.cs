@@ -1,5 +1,6 @@
 
 using System;
+using Enrollement;
 using System.Collections.Generic;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
@@ -13,6 +14,7 @@ namespace Enrollment
         };
 
         protected MqttClient mqttClient;
+        protected Model model;
 
         public RealTimeHandler(string host)
         {
@@ -36,17 +38,26 @@ namespace Enrollment
 
         private void MqttClient_MqttMsgPublishReceived(object sender, uPLibrary.Networking.M2Mqtt.Messages.MqttMsgPublishEventArgs e)
         {
-            Console.WriteLine(e.Topic);
+            bool modelIssetFlg = false;
             switch (e.Topic)
             {
                 case "attendance":
                     Console.WriteLine("Please fire the attendance event!");
+                    this.model = new AttendanceModel();
+                    modelIssetFlg = true;
                     break;
                 case "employee":
                     Console.WriteLine("Please fire the employee event!");
+                    this.model = new EmployeeModel();
+                    modelIssetFlg = true;
                     break;
                 default:
                     break;
+            }
+
+            if (modelIssetFlg)
+            {
+                FileHandler.saveData(this.model);
             }
         }
     }

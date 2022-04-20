@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using Enrollement;
+using Newtonsoft.Json;
 
 /// <summary>
 /// Handle file creation and modifications(reading and writting)
@@ -13,8 +15,10 @@ namespace Enrollment
         public static string path = currentUserPath + @"\AppData\Local\Tele-time\";
 
         public FileHandler() { }
-
-        // write or create file
+        
+        /*
+         * Write or create the file(if doesnt exist)
+         */
         public static void writeFile(string fileName, string data)
         {
             if (!Directory.Exists(path))
@@ -30,10 +34,25 @@ namespace Enrollment
             fs.Close();
         }
 
-        // read the file content
+        /*
+         * Read the file
+         * 
+         * return string
+         */
         public static String readFile(string fileName)
         {
             return File.ReadAllText(path + fileName);
+        }
+
+        /*
+         * Entry point of the file create and modification
+         */
+        public static void saveData(Model model)
+        {
+            Console.WriteLine("Creating or Modifying the file!");
+            string serializedData = JsonConvert.SerializeObject(model.getData(), Formatting.Indented);
+            string fileName = model.getFileName();
+            FileHandler.writeFile(fileName, serializedData);   
         }
     }
 }

@@ -188,6 +188,9 @@
     <Compile Include="CaptureForm.Designer.cs">
       <DependentUpon>CaptureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AttendanceModel.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="EmployeeModel.cs" />
     <Compile Include="RealTimeHandler.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="DataManager.cs" />

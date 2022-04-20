@@ -5,30 +5,6 @@ using Newtonsoft.Json;
 
 namespace Enrollement
 {
-
-    public class EmployeeModel
-    {
-        public int id { get; set; }
-        public int emp_id { get; set; }
-        public string first_name { get; set; }
-        public string middle_name { get; set; }
-        public string last_name { get; set; }
-        public int user_status { get; set; }
-        public string status { get; set; }
-        public object user_roles { get; set; }
-        public object emp_statuses { get; set; }
-        public string user_statuses { get; set; }
-        public string full_name { get; set; }
-    }
-
-    public class AttendanceModel
-    {
-        public int id { get; set; }
-        public int employee_id { get; set; }
-        public string time_in { get; set; }
-        public string time_out { get; set; }
-    }
-
     public class DataManager
     {
         // Http Client
@@ -71,10 +47,10 @@ namespace Enrollement
         }
 
 
-        public AttendanceModel[] getAttendancesWithinNDays()
+        public AttendanceModel[] getAttendancesWithinNDays(int days = 3)
         {
             AttendanceModel[] attendances = { };
-            var response = this.client.GetAsync(path + "attendances/3");
+            var response = this.client.GetAsync(path + "attendances/"+days);
             try
             {
                 response.Wait();
