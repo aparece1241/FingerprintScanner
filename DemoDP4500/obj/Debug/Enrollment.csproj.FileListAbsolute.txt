@@ -1,0 +1,210 @@
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo\DemoDP4500\obj\Debug\Enrollment.CaptureForm.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo\DemoDP4500\obj\Debug\Enrollment.frmEnrollment.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo\DemoDP4500\obj\Debug\Enrollment.frmRegistration.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo\DemoDP4500\obj\Debug\DemoDP4500.Properties.Resources.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo\DemoDP4500\obj\Debug\Enrollment.csproj.GenerateResource.cache
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo\DemoDP4500\obj\Debug\Enrollment.csproj.CoreCompileInputs.cache
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\obj\Debug\Enrollment.csprojAssemblyReference.cache
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\obj\Debug\Enrollment.CaptureForm.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\obj\Debug\Enrollment.frmEnrollment.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\obj\Debug\Enrollment.frmRegistration.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\obj\Debug\DemoDP4500.Properties.Resources.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\obj\Debug\Enrollment.csproj.GenerateResource.cache
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\obj\Debug\Enrollment.csproj.CoreCompileInputs.cache
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\bin\Debug\DemoDP4500.exe.config
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\bin\Debug\DemoDP4500.exe
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\bin\Debug\DemoDP4500.pdb
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\bin\Debug\DPFPCtlXWrapperNET.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\bin\Debug\DPFPDevNET.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\bin\Debug\DPFPEngNET.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\bin\Debug\DPFPGuiNET.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\bin\Debug\DPFPShrNET.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\bin\Debug\DPFPVerNET.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\obj\Debug\Enrollment.csproj.CopyComplete
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\obj\Debug\DemoDP4500.exe
+C:\Users\develop\Documents\TeleNet Time Tracker\Demo - Copy\DemoDP4500\obj\Debug\DemoDP4500.pdb
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment - Copy\DemoDP4500\obj\Debug\Enrollment.CaptureForm.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment - Copy\DemoDP4500\obj\Debug\Enrollment.frmEnrollment.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment - Copy\DemoDP4500\obj\Debug\Enrollment.frmRegistration.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment - Copy\DemoDP4500\obj\Debug\Enrollement.Properties.Resources.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment - Copy\DemoDP4500\obj\Debug\Enrollment.csproj.GenerateResource.cache
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment - Copy\DemoDP4500\obj\Debug\Enrollment.csproj.CoreCompileInputs.cache
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\Enrollement.exe.config
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\Enrollement.exe
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\Enrollement.pdb
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\DPFPCtlXWrapperNET.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\DPFPDevNET.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\DPFPEngNET.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\DPFPGuiNET.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\DPFPShrNET.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\DPFPVerNET.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\EntityFramework.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\MySql.Data.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.Async.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\System.ValueTuple.dll
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\EntityFramework.xml
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.xml
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.Async.xml
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\bin\Debug\System.ValueTuple.xml
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.CaptureFormVerify.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.CaptureForm.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.frmEnrollment.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.frmRegistration.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.frmVerificar.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\obj\Debug\Enrollement.frmMain.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\obj\Debug\Enrollement.Properties.Resources.resources
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.GenerateResource.cache
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.CoreCompileInputs.cache
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.CopyComplete
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\obj\Debug\Enrollement.exe
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\obj\Debug\Enrollement.pdb
+C:\Users\develop\Documents\TeleNet Time Tracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.csprojAssemblyReference.cache
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\Enrollement.exe.config
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\Enrollement.exe
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\Enrollement.pdb
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\DPFPCtlXWrapperNET.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\DPFPDevNET.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\DPFPEngNET.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\DPFPGuiNET.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\DPFPShrNET.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\DPFPVerNET.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\EntityFramework.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\MySql.Data.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.Async.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\System.ValueTuple.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\EntityFramework.xml
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.xml
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.Async.xml
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\System.ValueTuple.xml
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.CaptureFormVerify.resources
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.CaptureForm.resources
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.frmEnrollment.resources
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.frmRegistration.resources
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.frmVerificar.resources
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollement.frmMain.resources
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollement.Properties.Resources.resources
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.GenerateResource.cache
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.CoreCompileInputs.cache
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.CopyComplete
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollement.exe
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollement.pdb
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\Microsoft.Json.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\Microsoft.Net.Http.Formatting.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\Microsoft.Server.Common.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\System.Net.Http.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\Microsoft.Json.xml
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\Microsoft.Net.Http.Formatting.xml
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\System.Net.Http.xml
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Develop\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.AssemblyReference.cache
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\Enrollement.exe.config
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\Enrollement.exe
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\Enrollement.pdb
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\BouncyCastle.Crypto.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\DPFPCtlXWrapperNET.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\DPFPDevNET.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\DPFPEngNET.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\DPFPGuiNET.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\DPFPShrNET.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\DPFPVerNET.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\EntityFramework.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\Microsoft.Json.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\Microsoft.Net.Http.Formatting.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\Microsoft.Server.Common.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\MySql.Data.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.Async.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\System.Net.Http.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\System.ValueTuple.dll
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\BouncyCastle.Crypto.xml
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\EntityFramework.xml
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\Microsoft.Json.xml
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\Microsoft.Net.Http.Formatting.xml
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.xml
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.Async.xml
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\System.Net.Http.xml
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\bin\Debug\System.ValueTuple.xml
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.csprojAssemblyReference.cache
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.CaptureFormVerify.resources
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.CaptureForm.resources
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.frmEnrollment.resources
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.frmRegistration.resources
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.frmVerificar.resources
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollement.frmMain.resources
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollement.Properties.Resources.resources
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.GenerateResource.cache
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.CoreCompileInputs.cache
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.CopyComplete
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollement.exe
+D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollement.pdb
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.csprojAssemblyReference.cache
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.CaptureFormVerify.resources
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.CaptureForm.resources
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.frmEnrollment.resources
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.frmRegistration.resources
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.frmVerificar.resources
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollement.frmMain.resources
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollement.Properties.Resources.resources
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.GenerateResource.cache
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.CoreCompileInputs.cache
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Enrollement.exe.config
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Enrollement.exe.manifest
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Enrollement.application
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Enrollement.exe
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Enrollement.pdb
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\BouncyCastle.Crypto.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\DPFPCtlXWrapperNET.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\DPFPDevNET.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\DPFPEngNET.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\DPFPGuiNET.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\DPFPShrNET.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\DPFPVerNET.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\EngineIoClientDotNet.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\EntityFramework.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\EntityFramework.SqlServer.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\M2Mqtt.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Microsoft.Json.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Microsoft.Net.Http.Formatting.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Microsoft.Server.Common.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\MySql.Data.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Newtonsoft.Json.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.Async.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\SocketIOClient.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\SocketIoClientDotNet.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\System.Net.Http.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\System.ValueTuple.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\WebSocket4Net.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\BouncyCastle.Crypto.xml
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\EntityFramework.xml
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\EntityFramework.SqlServer.xml
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Microsoft.Json.xml
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Microsoft.Net.Http.Formatting.xml
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Newtonsoft.Json.xml
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.xml
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.Async.xml
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\SocketIOClient.pdb
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\SocketIOClient.xml
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\System.Net.Http.xml
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\System.ValueTuple.xml
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollement.exe.manifest
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollement.application
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.CopyComplete
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollement.exe
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollement.pdb
