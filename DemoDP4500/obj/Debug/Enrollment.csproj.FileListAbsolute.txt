@@ -153,7 +153,6 @@ D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.CoreCo
 D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.CopyComplete
 D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollement.exe
 D:\Projects\TimeTracker\Enrollment\DemoDP4500\obj\Debug\Enrollement.pdb
-D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.csprojAssemblyReference.cache
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.CaptureFormVerify.resources
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.CaptureForm.resources
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.frmEnrollment.resources
@@ -189,6 +188,7 @@ D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.dll
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\SocketIOClient.dll
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\SocketIoClientDotNet.dll
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\System.Net.Http.dll
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\System.Net.Http.WebRequest.dll
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\System.ValueTuple.dll
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\WebSocket4Net.dll
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\BouncyCastle.Crypto.xml
@@ -202,9 +202,11 @@ D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\Renci.SshNet.Async
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\SocketIOClient.pdb
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\SocketIOClient.xml
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\System.Net.Http.xml
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\System.Net.Http.WebRequest.xml
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\bin\Debug\System.ValueTuple.xml
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollement.exe.manifest
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollement.application
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.csproj.CopyComplete
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollement.exe
 D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollement.pdb
+D:\Users\ChronoDevs\Downloads\Enrollment\DemoDP4500\obj\Debug\Enrollment.csprojAssemblyReference.cache

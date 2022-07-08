@@ -21,6 +21,11 @@ namespace Enrollement
         public string user_statuses { get; set; }
         public string full_name { get; set; }
 
+        public override string getClassName()
+        {
+            return this.GetType().Name;
+        }
+
         public override Model[] getData()
         {
             return this.dataManager.getEmployee(1);

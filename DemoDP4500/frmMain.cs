@@ -22,7 +22,7 @@ namespace Enrollement
         private bool isSuccess;
         private string companyName;
         DataManager dal;
-        
+
 
         public frmMain()
         {
@@ -34,8 +34,8 @@ namespace Enrollement
         {
             try
             {
-                isConnected = true;
-                isSuccess = true;
+                isConnected = RealTimeHandler.isInternetConnnected;
+                isSuccess = RealTimeHandler.isInternetConnnected;
 
                 Config company_name = new Config();
                 companyName = company_name.company;
@@ -44,7 +44,16 @@ namespace Enrollement
                 txtUserName.Text = "Admin";
                 txtPassword.Text = "@dm1n";
 
-            } catch (Exception exception)
+                // Create the needed files
+                // asynchronous loading of files
+                Task.Factory.StartNew(() => {
+                    FileHandler.saveData(new EmployeeModel());
+                    FileHandler.saveData(new AttendanceModel());
+                    FileHandler.IsDataLoaded = true;
+                    Console.WriteLine("File Created and loaded!");
+                });
+            }
+            catch (Exception exception)
             {
                 MessageBox.Show(String.Format("Error: {0} {1}", exception.Message, companyName), "fingerprint enrollment");
             }
@@ -52,10 +61,11 @@ namespace Enrollement
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            isSuccess = true;
             isSuccess = ValidateUser();
 
             if (!isSuccess)
-            { 
+            {
                 displayStatus();
                 return;
             }
@@ -68,6 +78,7 @@ namespace Enrollement
 
         private void btnRun_Click(object sender, EventArgs e)
         {
+            isSuccess = true;
             isSuccess = ValidateUser();
 
             if (!isSuccess)
@@ -101,17 +112,11 @@ namespace Enrollement
 
         private bool ValidateUser()
         {
-            int Uname = Convert.ToInt32(GetSetting("Uname"));
-            int Pword = Convert.ToInt32(GetSetting("Pword"));
-            int _uname = txtUserName.Text.Trim().GetHashCode();
-            int _pword = txtPassword.Text.Trim().GetHashCode();
+            string Uname = txtUserName.Text.Trim();
+            string Pword = txtPassword.Text.Trim();
+            var response = Login.Authenticate(Uname, Pword);
 
-            if (_uname == Uname && _pword == Pword)
-            {
-                return true;
-            }
-
-            return false;
+            return response.Value;
         }
 
         private void setUser()
@@ -119,6 +124,7 @@ namespace Enrollement
             int uname = "Admin".GetHashCode();
             int pword = "@dm1n".GetHashCode();
 
+            // set user adiministrator login
 
             string objAppConfigValue = GetSetting("Uname");
             SetSetting("Uname", uname.ToString());
@@ -134,19 +140,24 @@ namespace Enrollement
             return ConfigurationManager.AppSettings[key];
         }
 
-        private static void SetSetting(string key, string value)
+        public static void SetSetting(string key, string value)
         {
-            Configuration configuration =
-                ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            configuration.AppSettings.Settings[key].Value = value;
-            configuration.Save(ConfigurationSaveMode.Full, true);
-            ConfigurationManager.RefreshSection("appSettings");
+            try
+            {
+                Configuration configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                // administrator login implementation
+                configuration.AppSettings.Settings[key].Value = value;
+                configuration.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("appSettings");
+            } catch (Exception e)
+            {
+                Console.WriteLine("Error");
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblStatus.Visible = false;
-
             if (!isSuccess)
             {
                 lblStatus.Visible = true;
@@ -167,14 +178,16 @@ namespace Enrollement
                 lblStatus.BackColor = System.Drawing.Color.Red;
                 lblStatus.ForeColor = System.Drawing.Color.White;
             }
+
         }
 
+
+        protected int interval = 0;
         private string getMessage()
         {
             string msg = "";
             btnRegister.Enabled = isConnected;
             btnRun.Enabled = isConnected;
-
             if (!isConnected)
             {
                 base.Text = companyName + " - Unable to connect to the Server.";
@@ -186,6 +199,28 @@ namespace Enrollement
             };
 
             return msg;
+        }
+
+        private void lblStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.ExitThread();
+
+            Environment.Exit(0);
+        }
+
+        private void txtUserName_KeyUp(object sender, KeyEventArgs e)
+        {
+            isSuccess = true;
+        }
+
+        private void txtPassword_KeyUp(object sender, KeyEventArgs e)
+        {
+            isSuccess = true;
         }
     }
 }

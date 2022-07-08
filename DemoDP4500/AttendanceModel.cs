@@ -9,13 +9,15 @@ namespace Enrollement
     {
         protected DataManager dataManager = new DataManager();
         
-        
-
-
         public int id { get; set; }
         public int employee_id { get; set; }
         public string time_in { get; set; }
         public string time_out { get; set; }
+
+        public override string getClassName()
+        {
+            return this.GetType().Name;
+        }
 
         public override Model[] getData()
         {

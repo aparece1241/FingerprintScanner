@@ -67,11 +67,11 @@ namespace Enrollement
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(82, 72);
+            this.label1.Location = new System.Drawing.Point(67, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 25);
+            this.label1.Size = new System.Drawing.Size(139, 25);
             this.label1.TabIndex = 2;
-            this.label1.Text = "User Name";
+            this.label1.Text = "Employee ID ";
             // 
             // label2
             // 
@@ -90,6 +90,7 @@ namespace Enrollement
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(224, 31);
             this.txtUserName.TabIndex = 4;
+            this.txtUserName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUserName_KeyUp);
             // 
             // txtPassword
             // 
@@ -99,10 +100,12 @@ namespace Enrollement
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(224, 31);
             this.txtPassword.TabIndex = 5;
+            this.txtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyUp);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblStatus);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(530, 224);
@@ -120,6 +123,7 @@ namespace Enrollement
             this.lblStatus.TabIndex = 10;
             this.lblStatus.Text = "Unable to connect to the Server";
             this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStatus.Click += new System.EventHandler(this.lblStatus_Click);
             // 
             // timer1
             // 
@@ -136,20 +140,20 @@ namespace Enrollement
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main";
+            this.Text = "Telenet";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.main_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

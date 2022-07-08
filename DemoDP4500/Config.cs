@@ -10,6 +10,7 @@ namespace Enrollement
     {
         public string company = ConfigurationSettings.AppSettings["Company"];
         public string ApiUrl = ConfigurationSettings.AppSettings["ApiUrl"];
+        public string ApiAccesssToken = ConfigurationSettings.AppSettings["ApiAccessToken"];
 
         public string sshServer = ConfigurationSettings.AppSettings["SSHServer"];
         public string sshUserName = ConfigurationSettings.AppSettings["sshUserName"];
@@ -22,5 +23,8 @@ namespace Enrollement
         public string dbPassword = ConfigurationSettings.AppSettings["Password"];
         public string dbDatabase = ConfigurationSettings.AppSettings["Database"];
         public int dbPort = Int32.Parse(ConfigurationSettings.AppSettings["Port"]);
+
+        public string Uname = ConfigurationSettings.AppSettings["Uname"];
+        public string Pword = ConfigurationSettings.AppSettings["Pword"];
     }
 }

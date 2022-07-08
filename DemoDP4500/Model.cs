@@ -22,5 +22,9 @@ namespace Enrollement
          */
         public abstract string getFileName();
 
+        /*
+         * Get class name
+         */
+        public abstract string getClassName();
     }
 }

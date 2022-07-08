@@ -188,5 +188,14 @@ namespace Enrollment
 
         private DPFP.Capture.Capture Capturer;
 
+        private void CaptureForm_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CaptureForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
     }
 }

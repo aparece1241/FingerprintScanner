@@ -107,6 +107,7 @@ namespace Enrollment
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(815, 80);
             this.panel4.TabIndex = 66;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // pictureBox1
             // 
@@ -170,6 +171,7 @@ namespace Enrollment
             this.Name = "CaptureFormVerify";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Capture Enrollment";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CaptureForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CaptureForm_FormClosed);
             this.Load += new System.EventHandler(this.CaptureForm_Load);
             this.panel4.ResumeLayout(false);

@@ -2,6 +2,7 @@
 using System.IO;
 using Enrollement;
 using System.Linq;
+using Newtonsoft.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -15,13 +16,10 @@ namespace Enrollment
         private DPFP.Verification.Verification Verificator;
         private bool isSomeoneVerified = false;
         private EmployeeModel verifiedEmployee;
-        private Task taskmatching1;
-        private Task taskmatching2;
-        private Task taskmatching3;
-        private Task taskmatching4;
-        private Task taskmatching5;
-        private Task taskmatching6;
-        private Task taskmatching7;
+        private List<PendingAttendance> pendingAttendances = new List<PendingAttendance> { };
+
+        // test logger
+        private List<string> loggerData = new List<string> { };
 
         DataManager dal;
 
@@ -34,10 +32,10 @@ namespace Enrollment
         protected override void Init()
         {
             Config objt = new Config();
-
+            this.dal = new DataManager();
             base.Init();
             base.Text = objt.company;
-            Verificator = new DPFP.Verification.Verification();     // Create a fingerprint template verificator
+            //Verificator = new DPFP.Verification.Verification();     // Create a fingerprint template verificator
             UpdateStatus(0);
             initFields();
         }
@@ -64,16 +62,25 @@ namespace Enrollment
             {
                 System.Threading.Timer timer = null;
 
-                // Compare the feature set with our template
-                DPFP.Verification.Verification.Result result = new DPFP.Verification.Verification.Result();
-
-                DPFP.Template template = new DPFP.Template();
-                
                 try
                 {
-                    // query all employees from api
-                    dal = new DataManager();
-                    IEnumerable<EmployeeModel> employees = dal.getEmployee(1);
+                    IEnumerable<EmployeeModel> employees = new EmployeeModel[] { };
+                    if (FileHandler.IsDataLoaded && FileHandler.validateFile((new EmployeeModel()).getFileName()))
+                    {
+                        employees = FileHandler.retrieveData(new EmployeeModel());
+                    }
+                    else
+                    {
+                        // Retrieve attendance data after submit
+                        FileHandler.saveData(new AttendanceModel());
+
+                        // Retrieve employee data after submit
+                        FileHandler.saveData(new EmployeeModel());
+
+                        employees = dal.getEmployee(1);
+                    }
+
+                    //IEnumerable<EmployeeModel> employees = dal.getEmployee(1);
 
                     // check length the length of employees
                     if (employees.Count() == 0)
@@ -84,7 +91,7 @@ namespace Enrollment
                         {
                             initializeFields();
                             timer.Dispose();
-                        }, null, 2000, System.Threading.Timeout.Infinite);
+                        }, null, 1000, System.Threading.Timeout.Infinite);
 
                         return;
                     }
@@ -92,8 +99,10 @@ namespace Enrollment
                     // array of tasks
                     List<Task> tasks = new List<Task>();
                     int employeePerTask = 100;
-                    double iteration = (employees.Count() / (double) employeePerTask);
+                    double iteration = (employees.Count() / (double)employeePerTask);
                     iteration = Math.Ceiling(iteration);
+
+
 
                     // devide employees
                     for (int i = 0; i < iteration; i++)
@@ -101,24 +110,37 @@ namespace Enrollment
                         EmployeeModel[] emps = employees.Skip(employeePerTask * i).Take(employeePerTask).ToArray();
 
                         // create tasks
-                        Task task = Task.Factory.StartNew(() => this.matchingFingerPrints(emps, features, template, result));
+                        Task task = Task.Factory.StartNew(() => this.matchingFingerPrints(emps, features));
                         tasks.Add(task);
                     }
-
+                    
+                    // DO NOT DELETE FOR TESTING PURPOSE
                     // comparing with out using threads
-                    //this.matchingFingerPrints(employees.ToArray(), features, template, result);
+                    //this.matchingFingerPrints(employees.ToArray(), features);
 
-                    // wait all task
+                    //wait all task
                     Task.WaitAll(tasks.ToArray());
 
+                    string logData = "[" + DateTime.Now.ToString("hh:mm: ss") + "]: " + JsonConvert.SerializeObject(this.loggerData);
+                    string fileName = DateTime.Now.ToString("MM-dd-yyyy") + ".log";
+                    FileHandler.FingerPrintLogger(logData, fileName, "logs");
+
+                    if (this.loggerData.Count() > 1)
+                    {
+                        this.loggerData = new List<string>();
+                        throw new Exception("Matched two fingerprint!");
+                    }
+
+                    this.loggerData = new List<string>();
                     // check if no one is verified
                     if (!this.isSomeoneVerified)
                     {
                         SetPrompt("Please Try Again!");
-                    } else
+                    }
+                    else
                     {
                         var _name = this.verifiedEmployee.last_name + ", ";
-                        _name += this.verifiedEmployee.first_name;
+                        _name += this.verifiedEmployee.first_name + " ";
                         _name += this.verifiedEmployee.middle_name;
 
                         SetName(_name);
@@ -132,21 +154,30 @@ namespace Enrollment
                     {
                         initializeFields();
                         timer.Dispose();
-                    }, null, 2000, System.Threading.Timeout.Infinite);
+                    }, null, 1000, System.Threading.Timeout.Infinite);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    Console.WriteLine(ex);
+                    timer = new System.Threading.Timer((obj) =>
+                    {
+                        initializeFields();
+                        timer.Dispose();
+                    }, null, 1000, System.Threading.Timeout.Infinite);
                 }
             }
         }
-    
+
         private void matchingFingerPrints(
             EmployeeModel[] employees,
-            DPFP.FeatureSet features,
-            DPFP.Template template,
-            DPFP.Verification.Verification.Result result
-        ) {
+            DPFP.FeatureSet features
+        )
+        {
+            // Compare the feature set with our template
+            DPFP.Verification.Verification.Result result = new DPFP.Verification.Verification.Result();
+
+            DPFP.Template template = new DPFP.Template();
             Stream stream;
 
             for (int index = 0; employees.Length > index; index++)
@@ -156,15 +187,24 @@ namespace Enrollment
 
 
                 template = new DPFP.Template(stream);
-                Verificator.Verify(features, template, ref result);
+                try
+                {
+                    Verificator = new DPFP.Verification.Verification();     // Create a fingerprint template verificator
+
+                    Verificator.Verify(features, template, ref result);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    return;
+                }
                 UpdateStatus(result.FARAchieved);
 
                 if (result.Verified)
                 {
-                    Console.WriteLine("Matched! isSomeoneVerified: true");
                     this.verifiedEmployee = employees[index];
                     this.isSomeoneVerified = true;
-                    break;
+                    this.loggerData.Add(employees[index].emp_id + " " + employees[index].full_name + " " + Task.CurrentId.ToString());
                 }
             }
         }
@@ -178,9 +218,46 @@ namespace Enrollment
         {
             dal = new DataManager();
             DateTime _datetime = DateTime.Now;
-            
+
             // update the attendance time in time out
-            SetPrompt(dal.SaveAttendance(employee.id, _datetime));
+            if (RealTimeHandler.isInternetConnnected) {
+                // This line must be used for now
+                //SetPrompt(dal.SaveAttendance(employee.id, _datetime));
+
+                if (FileHandler.IsDataLoaded && FileHandler.validateFile((new AttendanceModel()).getFileName()))
+                {
+                    SetPrompt(dal.FingerprintResponseMsg(employee.id, _datetime));
+                    dal.SaveAttendance(employee.id, _datetime);
+                }
+                else
+                {
+                    // Retrieve attendance data after submit
+                    FileHandler.saveData(new AttendanceModel());
+
+                    // Retrieve employee data after submit
+                    FileHandler.saveData(new EmployeeModel());
+
+                    SetPrompt(dal.SaveAttendance(employee.id, _datetime));
+                }
+            }
+            else
+            {
+                string responseMsg = dal.FingerprintResponseMsg(employee.id, _datetime);
+                SetPrompt(responseMsg);
+                pendingAttendances = new List<PendingAttendance>(FileHandler.retrieveData(new PendingAttendance(), "pendings"));
+
+                PendingAttendance att = new PendingAttendance();
+                att.emp_id = employee.id;
+                att.date = _datetime;
+
+                if (!responseMsg.Contains("Too early to"))
+                {
+                    pendingAttendances.Add(att);
+                }
+
+                string serializedData = JsonConvert.SerializeObject(pendingAttendances, Formatting.Indented);
+                FileHandler.FingerPrintLogger(serializedData, att.getFileName(), "pendings", false);
+            }
         }
 
         public frmVerificar()
@@ -194,3 +271,4 @@ namespace Enrollment
         }
     }
 }
+

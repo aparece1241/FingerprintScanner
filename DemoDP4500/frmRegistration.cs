@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Configuration;
 using System.Data;
-using System.Windows.Forms;
 using Enrollement;
-using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
+using System.Configuration;
+using System.Windows.Forms;
 using System.Collections.Generic;
 
 namespace Enrollment
@@ -137,12 +137,11 @@ namespace Enrollment
             try
             {
                 dal = new DataManager();
- 
                 var employees = dal.getEmployee(0, param);
                 foreach (EmployeeModel emp in employees)
                 {
 
-                    ListViewItem listitem = new ListViewItem(emp.id.ToString());
+                    ListViewItem listitem = new ListViewItem(emp.emp_id.ToString());
                     listitem.SubItems.Add(emp.last_name.ToString());
                     listitem.SubItems.Add(emp.first_name.ToString());
                     listitem.SubItems.Add(emp.middle_name.ToString());

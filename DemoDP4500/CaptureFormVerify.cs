@@ -1,10 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using Enrollement;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 
 namespace Enrollment
 {
@@ -15,7 +13,17 @@ namespace Enrollment
 
     public partial class CaptureFormVerify : Form, DPFP.Capture.EventHandler
 	{
-		public CaptureFormVerify()
+        // One seconds is equal to 1000 miliseconds
+        protected int miliSecondsInSeconds = 300;
+        protected int interval = 0;
+		protected Task task;
+
+
+        // get the main form instance
+        frmMain frm = new frmMain();
+
+
+        public CaptureFormVerify()
 		{
 			InitializeComponent();
 		}
@@ -75,6 +83,13 @@ namespace Enrollment
 		}
 		
 	#region Form Event Handlers:
+        private void CaptureForm_FormClosing(Object sender, FormClosingEventArgs e)
+        {
+            Application.ExitThread();
+
+            Environment.Exit(0);
+        }
+
 		private void CaptureForm_Load(object sender, EventArgs e)
 		{
 			Init();
@@ -83,7 +98,7 @@ namespace Enrollment
 
 		private void CaptureForm_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			Stop();
+            Stop();
 		}
 		#endregion
 
@@ -168,9 +183,46 @@ namespace Enrollment
         private void timer1_Tick(object sender, EventArgs e)
         {
 			lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
-		}
+            interval++;
+            if (interval >= miliSecondsInSeconds)
+            {
+                try
+                {
+				    if (!RealTimeHandler.mqttClient.IsConnected)
+                    {
+					    Console.WriteLine("Reconnecting . . .");
+					    new RealTimeHandler();
+                    }
+				    // check internet per 3 seconds
+                    RealTimeHandler.InternetChecker();
+				
+                    if (RealTimeHandler.isInternetConnnected)
+                    {
+					    if (this.task == null)
+                        {
+						    this.task = Task.Factory.StartNew(() => RealTimeHandler.SavingPendingAttendance());
+						    if (this.task.IsCompleted)
+						    {
+							    this.task = Task.Factory.StartNew(() => RealTimeHandler.SavingPendingAttendance());
+						    }
+                        }
+                    }
+                } catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                } finally
+                {
+                    interval = 0;
+                }
+            }
+        }
 
         private void lblTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
         }

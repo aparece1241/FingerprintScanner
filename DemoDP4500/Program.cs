@@ -16,15 +16,17 @@ namespace Enrollment
         static void Main()
         {
             // initialized socket events
-            new RealTimeHandler("test.mosquitto.org");
+            new RealTimeHandler();
 
             //DataManager dt = new DataManager();
             //dt.getAttendancesWithinNDays();
+            //Console.WriteLine(dt.FingerprintResponseMsg(257, new DateTime()));
 
             //EmployeeModel[] employees = dt.getEmployee(1);
             //string employeesJson = JsonConvert.SerializeObject(employees, Formatting.Indented);
             //FileHandler.writeFile(FileHandler.path + "test.json", employeesJson);
             //Console.WriteLine(FileHandler.readFile("test.json"));
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

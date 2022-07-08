@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enrollment", "DemoDP4500\Enrollment.csproj", "{A6C85238-96B2-4442-BA7A-051023B8162D}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{B6419D83-AC73-4B83-A191-89225AA9F65D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,16 +39,6 @@ Global
 		{A6C85238-96B2-4442-BA7A-051023B8162D}.Release|x64.Build.0 = Release|Any CPU
 		{A6C85238-96B2-4442-BA7A-051023B8162D}.Release|x86.ActiveCfg = Release|Any CPU
 		{A6C85238-96B2-4442-BA7A-051023B8162D}.Release|x86.Build.0 = Release|Any CPU
-		{B6419D83-AC73-4B83-A191-89225AA9F65D}.Debug|Any CPU.ActiveCfg = Debug
-		{B6419D83-AC73-4B83-A191-89225AA9F65D}.Debug|ARM.ActiveCfg = Debug
-		{B6419D83-AC73-4B83-A191-89225AA9F65D}.Debug|ARM64.ActiveCfg = Debug
-		{B6419D83-AC73-4B83-A191-89225AA9F65D}.Debug|x64.ActiveCfg = Debug
-		{B6419D83-AC73-4B83-A191-89225AA9F65D}.Debug|x86.ActiveCfg = Debug
-		{B6419D83-AC73-4B83-A191-89225AA9F65D}.Release|Any CPU.ActiveCfg = Release
-		{B6419D83-AC73-4B83-A191-89225AA9F65D}.Release|ARM.ActiveCfg = Release
-		{B6419D83-AC73-4B83-A191-89225AA9F65D}.Release|ARM64.ActiveCfg = Release
-		{B6419D83-AC73-4B83-A191-89225AA9F65D}.Release|x64.ActiveCfg = Release
-		{B6419D83-AC73-4B83-A191-89225AA9F65D}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
