@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using Enrollement;
+using Enrollment;
 using Newtonsoft.Json;
 
 /// <summary>
@@ -13,7 +13,7 @@ namespace Enrollment
     {
         public static bool IsDataLoaded = false;
         protected static string currentUserPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        public static string path = currentUserPath + @"\AppData\Local\Tele-time\";
+        public static string path = currentUserPath + @"\AppData\Local\Teletime-tracker\";
 
         public FileHandler() { }
         

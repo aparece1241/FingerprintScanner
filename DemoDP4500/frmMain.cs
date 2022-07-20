@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
 
-namespace Enrollement
+namespace Enrollment
 {
     public partial class frmMain : Form
     {
@@ -213,14 +213,16 @@ namespace Enrollement
             Environment.Exit(0);
         }
 
-        private void txtUserName_KeyUp(object sender, KeyEventArgs e)
+        private void txtUserName_MouseClick(object sender, MouseEventArgs e)
         {
             isSuccess = true;
+            this.txtUserName.Text = "";
         }
 
-        private void txtPassword_KeyUp(object sender, KeyEventArgs e)
+        private void txtPassword_MouseClick(object sender, MouseEventArgs e)
         {
             isSuccess = true;
+            this.txtPassword.Text = "";
         }
     }
 }

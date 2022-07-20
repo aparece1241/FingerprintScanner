@@ -1,5 +1,5 @@
 ﻿
-namespace Enrollement
+namespace Enrollment
 {
     partial class frmMain
     {
@@ -90,7 +90,7 @@ namespace Enrollement
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(224, 31);
             this.txtUserName.TabIndex = 4;
-            this.txtUserName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUserName_KeyUp);
+            this.txtUserName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtUserName_MouseClick);
             // 
             // txtPassword
             // 
@@ -100,7 +100,7 @@ namespace Enrollement
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(224, 31);
             this.txtPassword.TabIndex = 5;
-            this.txtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyUp);
+            this.txtPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPassword_MouseClick);
             // 
             // groupBox1
             // 

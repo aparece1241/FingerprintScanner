@@ -1,5 +1,5 @@
 using System;
-using Enrollement;
+using Enrollment;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading.Tasks;
@@ -188,7 +188,7 @@ namespace Enrollment
             {
                 try
                 {
-				    if (!RealTimeHandler.mqttClient.IsConnected)
+				    if (!RealTimeHandler.ws.IsAlive)
                     {
 					    Console.WriteLine("Reconnecting . . .");
 					    new RealTimeHandler();

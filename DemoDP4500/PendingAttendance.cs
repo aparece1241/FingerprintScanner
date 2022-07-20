@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Enrollement
+namespace Enrollment
 {
     public class PendingAttendance : Model
     {

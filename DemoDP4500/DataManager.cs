@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using Newtonsoft.Json;
-using Enrollment;
 using System.Threading.Tasks;
 
-namespace Enrollement
+namespace Enrollment
 {
     public class DataManager
     {
@@ -14,7 +13,6 @@ namespace Enrollement
 
         // Http Client
         private HttpClient client = new HttpClient();
-        private static string path = (new Config()).ApiUrl;
         private List<PendingAttendance> pendingAttendances = new List<PendingAttendance>{ };
 
         EmployeeModel[] employees = new EmployeeModel[0];
@@ -22,7 +20,6 @@ namespace Enrollement
         public DataManager()
         {
             this.Api = new ApiHandler();
-            //this.client.MaxResponseContentBufferSize = 2000000;
         }
 
         #region Api Calls
@@ -31,52 +28,28 @@ namespace Enrollement
             var response = this.client.GetAsync("https://dev.timetracker.chronostep.com/");
             response.Wait();
             var result = response.Result;
-            if (result.IsSuccessStatusCode)
-            {
-                var body = result.Content.ReadAsStringAsync();
-                body.Wait();
-            }
         }
 
-        public EmployeeModel[] getEmployee(int is_all, string search = null)
+        /**
+         * Get all employees
+         * param: Integer is_all
+         * param: String search
+         * 
+         * return: 
+         */
+        public EmployeeModel[] getEmployees(int is_all, string search = null)
         {
             KeyValuePair<string, bool> response = this.Api.apiRequest(HttpMethod.Get, "employees?all=" + is_all + "&search=" + search);
             return response.Value ? JsonConvert.DeserializeObject<EmployeeModel[]>(response.Key) : new EmployeeModel[0];
         }
 
-
-        public AttendanceModel[] getAttendancesWithinNDays(int days = 3)
+        /*
+         * Get attendance with in days
+         */
+        public AttendanceModel[] getLatestAttendances()
         {
-            KeyValuePair<string, bool> response = this.Api.apiRequest(HttpMethod.Get, "attendances/" + days);
+            KeyValuePair<string, bool> response = this.Api.apiRequest(HttpMethod.Get, "attendances");
             return response.Value ? JsonConvert.DeserializeObject<AttendanceModel[]>(response.Key) : new AttendanceModel[0];
-        }
-
-        public EmployeeModel[] getEmployeeByFingerprint(string fingerprint)
-        {
-            var payload = new Dictionary<string, string> {
-                { "fingerprint", fingerprint }
-            };
-            
-            var stringPayload = JsonConvert.SerializeObject(payload);
-            StringContent content = new StringContent(stringPayload, System.Text.Encoding.UTF8, "application/json");
-            HttpRequestMessage request = new HttpRequestMessage
-            {
-                Method = HttpMethod.Get,
-                RequestUri = new Uri(path + "employee/fingerprint"),
-                Content = content
-            };
-            var response = this.client.SendAsync(request);
-            response.Wait();
-
-            var result = response.Result;
-            if (result.IsSuccessStatusCode)
-            {
-                //var body = result.Content.ReadAsAsync<EmployeeModel[]>();
-                //body.Wait();
-
-                //employees = body.Result;
-            }
-            return employees;
         }
 
         /*
@@ -89,17 +62,8 @@ namespace Enrollement
                 { "fingerprint", fingerprint},
                 { "employee_id", employee_id.ToString()}
             };
-            string strContent = JsonConvert.SerializeObject(payload);
-            StringContent content = new StringContent(strContent, System.Text.Encoding.UTF8, "application/json");
-            var response = this.client.PostAsync(path + "employee/update", content);
-            response.Wait();
-
-            var result = response.Result;
-            if (result.IsSuccessStatusCode)
-            {
-                var body = result.Content.ReadAsStringAsync();
-                body.Wait();
-            }
+            StringContent content = new StringContent(JsonConvert.SerializeObject(payload), System.Text.Encoding.UTF8, "application/json");
+            var response = this.Api.apiRequest(HttpMethod.Post, "employee/update", content);
 
             // Retrieve attendance data after submit
             FileHandler.saveData(new AttendanceModel());
@@ -110,6 +74,9 @@ namespace Enrollement
             content.Dispose();
         }
 
+        /*
+         * Save employees by batch 
+         */
         public bool SaveBatchAttendance(int id, DateTime dateTime)
         {
             var payload = new Dictionary<string, string>
@@ -118,20 +85,84 @@ namespace Enrollement
                 { "dateTime", dateTime.ToString("yyyy-MM-dd HH:mm:ss") }
             };
 
+            string strContent = JsonConvert.SerializeObject(payload);
+            StringContent content = new StringContent(strContent, System.Text.Encoding.UTF8, "application/json");
+            var response = this.Api.apiRequest(HttpMethod.Post, "attendance", content);
+
+            return response.Value;
+        }
+
+        /*
+         * Save attendance into the live server
+         */
+        public string SaveAttendance(int id, DateTime dateTime)
+        {
+            Console.WriteLine(id);
+            string _return = "";
+            var payload = new Dictionary<string, string>
+            {
+                { "empID", id.ToString() },
+                { "dateTime", dateTime.ToString("yyyy-MM-dd HH:mm:ss") }
+            };
             try
             {
                 string strContent = JsonConvert.SerializeObject(payload);
                 StringContent content = new StringContent(strContent, System.Text.Encoding.UTF8, "application/json");
-                var response = this.client.PostAsync(path + "attendance", content);
-                response.Wait();
+                var response = this.Api.apiRequest(HttpMethod.Post, "attendance", content);
 
-                var result = response.Result;
+                if (response.Value)
+                {
+                    string resBody = response.Key;
 
-                return result.IsSuccessStatusCode;
-            } catch
-            {
-                return false;
+                    if (resBody.Contains("Insert"))
+                    {
+                        _return = "Successfully Time in";
+                    }
+                    else if (resBody.Contains("Updated"))
+                    {
+                        _return = "Successfully Time out";
+                    }
+                    else
+                    {
+                        _return = "Too early to " + (resBody.Contains("Time_in") ? "Time in!" : "Time out!");
+                    }
+                }
+                else
+                {
+                    PendingAttendance att = new PendingAttendance();
+                    pendingAttendances = new List<PendingAttendance>(FileHandler.retrieveData(new PendingAttendance(), "pending"));
+
+                    att.emp_id = id;
+                    att.date = dateTime;
+                    pendingAttendances.Add(att);
+
+                    string serializedData = JsonConvert.SerializeObject(pendingAttendances, Formatting.Indented);
+                    FileHandler.FingerPrintLogger(serializedData, att.getFileName(), "pendings", false);
+                }
             }
+            catch (Exception e)
+            {
+                PendingAttendance att = new PendingAttendance();
+                pendingAttendances = new List<PendingAttendance>(FileHandler.retrieveData(new PendingAttendance(), "pending"));
+
+                att.emp_id = id;
+                att.date = dateTime;
+                pendingAttendances.Add(att);
+
+                string serializedData = JsonConvert.SerializeObject(pendingAttendances, Formatting.Indented);
+                FileHandler.FingerPrintLogger(serializedData, att.getFileName(), "pendings", false);
+            }
+
+
+            Task.Factory.StartNew(() => {
+                // Retrieve attendance data after submit
+                FileHandler.saveData(new AttendanceModel());
+
+                // Retrieve employee data after submit
+                FileHandler.saveData(new EmployeeModel());
+            });
+
+            return _return;
         }
         #endregion
 
@@ -171,82 +202,6 @@ namespace Enrollement
                     UpdateAttendanceFile(attendances, attendance, attIndex);
                 }
             }
-
-            Task.Factory.StartNew(() => {
-                // Retrieve attendance data after submit
-                FileHandler.saveData(new AttendanceModel());
-
-                // Retrieve employee data after submit
-                FileHandler.saveData(new EmployeeModel());
-            });
-            
-            return _return;
-        }
-
-        /*
-         * Save attendance into the live server
-         */
-        public string SaveAttendance(int id, DateTime dateTime)
-        {
-            string _return = "";
-            var payload = new Dictionary<string, string>
-            {
-                { "empID", id.ToString() },
-                { "dateTime", dateTime.ToString("yyyy-MM-dd HH:mm:ss") }
-            };
-            try
-            {
-                string strContent = JsonConvert.SerializeObject(payload);
-                StringContent content = new StringContent(strContent, System.Text.Encoding.UTF8, "application/json");
-                var response = this.client.PostAsync(path + "attendance", content);
-                response.Wait();
-
-                var result = response.Result;
-                if (result.IsSuccessStatusCode)
-                {
-                    var body = result.Content.ReadAsStringAsync();
-                    body.Wait();
-
-                    string resBody = body.Result;
-
-                    if (resBody.Contains("Insert"))
-                    {
-                        _return = "Successfully Time in";
-                    }
-                    else if (resBody.Contains("Updated"))
-                    {
-                        _return = "Successfully Time out";
-                    }
-                    else
-                    {
-                        _return = "Too early to " + (resBody.Contains("Time_in") ? "Time in!" : "Time out!");
-                    }
-                }
-                else
-                {
-                    PendingAttendance att = new PendingAttendance();
-                    pendingAttendances = new List<PendingAttendance>(FileHandler.retrieveData(new PendingAttendance(), "pending"));
-
-                    att.emp_id = id;
-                    att.date = dateTime;
-                    pendingAttendances.Add(att);
-
-                    string serializedData = JsonConvert.SerializeObject(pendingAttendances, Formatting.Indented);
-                    FileHandler.FingerPrintLogger(serializedData, att.getFileName(), "pendings", false);
-                }
-            } catch (Exception e)
-            {
-                PendingAttendance att = new PendingAttendance();
-                pendingAttendances = new List<PendingAttendance>(FileHandler.retrieveData(new PendingAttendance(), "pending"));
-
-                att.emp_id = id;
-                att.date = dateTime;
-                pendingAttendances.Add(att);
-
-                string serializedData = JsonConvert.SerializeObject(pendingAttendances, Formatting.Indented);
-                FileHandler.FingerPrintLogger(serializedData, att.getFileName(), "pendings", false);
-            }
-            
             return _return;
         }
         #endregion
@@ -262,7 +217,6 @@ namespace Enrollement
             Console.WriteLine(String.Format("{0} {1}", dateTime, dateTimeInOut));
             // add 20 seconds for interval
             dateTimeInOut = dateTimeInOut.AddSeconds(interval);
-
 
             return DateTime.Compare(dateTimeInOut, dateTime) >= 0;
         }

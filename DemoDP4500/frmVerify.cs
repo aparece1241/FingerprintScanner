@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using Enrollement;
+using Enrollment;
 using System.Linq;
 using Newtonsoft.Json;
 using System.Threading;
@@ -57,7 +57,6 @@ namespace Enrollment
 
             // Check quality of the sample and start verification if it's good
             // TODO: move to a separate task
-            Console.WriteLine(Convert.ToBase64String(Sample.Bytes));
             if (features != null)
             {
                 System.Threading.Timer timer = null;
@@ -77,10 +76,9 @@ namespace Enrollment
                         // Retrieve employee data after submit
                         FileHandler.saveData(new EmployeeModel());
 
-                        employees = dal.getEmployee(1);
+                        employees = dal.getEmployees(1);
                     }
 
-                    //IEnumerable<EmployeeModel> employees = dal.getEmployee(1);
 
                     // check length the length of employees
                     if (employees.Count() == 0)
@@ -123,7 +121,7 @@ namespace Enrollment
 
                     string logData = "[" + DateTime.Now.ToString("hh:mm: ss") + "]: " + JsonConvert.SerializeObject(this.loggerData);
                     string fileName = DateTime.Now.ToString("MM-dd-yyyy") + ".log";
-                    FileHandler.FingerPrintLogger(logData, fileName, "logs");
+                    Logger.log(LogType.INFO, logData, this.GetType().Name);
 
                     if (this.loggerData.Count() > 1)
                     {
@@ -158,8 +156,9 @@ namespace Enrollment
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex.ToString());
+                    Logger.log(LogType.ERROR, ex.ToString(), this.GetType().Name);
                     MessageBox.Show(ex.Message);
-                    Console.WriteLine(ex);
                     timer = new System.Threading.Timer((obj) =>
                     {
                         initializeFields();
@@ -182,6 +181,11 @@ namespace Enrollment
 
             for (int index = 0; employees.Length > index; index++)
             {
+                if (employees[index].status == "" || employees[index].status == null)
+                {
+                    continue;
+                }
+
                 byte[] raw = Convert.FromBase64String(employees[index].status.Replace(" ", "+"));
                 stream = new MemoryStream(raw);
 
@@ -195,7 +199,7 @@ namespace Enrollment
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
+                    Logger.log(LogType.ERROR, e.ToString(), this.GetType().Name);
                     return;
                 }
                 UpdateStatus(result.FARAchieved);

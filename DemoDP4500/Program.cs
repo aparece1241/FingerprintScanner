@@ -1,5 +1,5 @@
 ﻿using System;
-using Enrollement;
+using Enrollment;
 using Newtonsoft.Json;
 using System.Windows.Forms;
 
@@ -17,16 +17,6 @@ namespace Enrollment
         {
             // initialized socket events
             new RealTimeHandler();
-
-            //DataManager dt = new DataManager();
-            //dt.getAttendancesWithinNDays();
-            //Console.WriteLine(dt.FingerprintResponseMsg(257, new DateTime()));
-
-            //EmployeeModel[] employees = dt.getEmployee(1);
-            //string employeesJson = JsonConvert.SerializeObject(employees, Formatting.Indented);
-            //FileHandler.writeFile(FileHandler.path + "test.json", employeesJson);
-            //Console.WriteLine(FileHandler.readFile("test.json"));
-
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

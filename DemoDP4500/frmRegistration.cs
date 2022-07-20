@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data;
-using Enrollement;
+using Enrollment;
 using Newtonsoft.Json;
 using System.Configuration;
 using System.Windows.Forms;
@@ -65,21 +65,10 @@ namespace Enrollment
                 int emp_id = Int32.Parse(txtEmpID.Text);
                 dal = new DataManager();
 
-                /* string qryStr = "UPDATE employees SET fingerprint = @fingerprint WHERE emp_id = @empId;";
+                EmployeeModel[] employees = FileHandler.retrieveData(new EmployeeModel());
+                EmployeeModel employee = Array.Find(employees, emp => emp.emp_id == emp_id);
 
-                 var fingerprint = new MySqlParameter("@fingerprint", MySqlDbType.Blob);
-                 var empId = new MySqlParameter("@empId", MySqlDbType.Int32);
-
-                 fingerprint.Value = _stream;
-                 empId.Value = Int32.Parse(txtEmpID.Text);
-
-                 MySqlParameter[] myParamArray = new MySqlParameter[]{
-                   fingerprint,
-                   empId
-                 };*/
-
-                // Testing
-                dal.updateRecordAsync(Convert.ToBase64String(_stream), emp_id);
+                dal.updateRecordAsync(Convert.ToBase64String(_stream), employee.id);
 
                 Template = null;
 
@@ -88,6 +77,7 @@ namespace Enrollment
             }
             catch (Exception ex)
             {
+                Logger.log(LogType.ERROR, ex.ToString(), this.GetType().Name);
                 MessageBox.Show(ex.Message);
             }
         }
@@ -137,7 +127,7 @@ namespace Enrollment
             try
             {
                 dal = new DataManager();
-                var employees = dal.getEmployee(0, param);
+                var employees = dal.getEmployees(0, param);
                 foreach (EmployeeModel emp in employees)
                 {
 
@@ -161,8 +151,8 @@ namespace Enrollment
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
-                //MessageBox.Show(ex);
+                Logger.log(LogType.ERROR, ex.ToString(), this.GetType().Name);
+                MessageBox.Show(ex.Message);
             }
         }
 

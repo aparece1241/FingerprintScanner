@@ -135,7 +135,7 @@ namespace Enrollment
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.BackgroundImage = global::Enrollement.Properties.Resources.penal;
+            this.panel4.BackgroundImage = global::Enrollment.Properties.Resources.penal;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(-1, 0);

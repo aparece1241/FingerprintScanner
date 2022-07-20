@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Enrollement
+namespace Enrollment
 {
     public class EmployeeModel : Model
     {
@@ -28,7 +28,7 @@ namespace Enrollement
 
         public override Model[] getData()
         {
-            return this.dataManager.getEmployee(1);
+            return this.dataManager.getEmployees(1);
         }
 
         public override string getFileName()

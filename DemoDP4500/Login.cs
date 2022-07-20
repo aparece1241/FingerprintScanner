@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Text;
 using System.Linq;
-using Enrollement;
+using Enrollment;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace Enrollement
+namespace Enrollment
 {
 
     public class LoginReponseModel
@@ -27,6 +27,13 @@ namespace Enrollement
         {
         }
 
+        /*
+         * To authenticate admin user for fingerprint access
+         * param: String username
+         * param: String password
+         * 
+         * return: KeyValuePair<string, bool> response
+         */
         public static KeyValuePair<string, bool> Authenticate(string username, string password)
         {
             Api = new ApiHandler();
@@ -40,14 +47,18 @@ namespace Enrollement
             body = new StringContent(content, Encoding.UTF8, "application/json");
 
             var response = Api.apiRequest(HttpMethod.Post, "device/login", body);
-            var responseData = JsonConvert.DeserializeObject<LoginReponseModel>(response.Key);
-
-            if (responseData.success)
+            if (response.Value)
             {
-                frmMain.SetSetting("ApiAccessToken", responseData.token);
+                var responseData = JsonConvert.DeserializeObject<LoginReponseModel>(response.Key);
+
+                if (responseData.success)
+                {
+                    frmMain.SetSetting("ApiAccessToken", responseData.token);
+                }
+                return new KeyValuePair<string, bool>(responseData.token, responseData.success && response.Value);
             }
 
-            return new KeyValuePair<string, bool>(responseData.token, responseData.success);
+            return new KeyValuePair<string, bool>("", response.Value);
         }
     }
 }

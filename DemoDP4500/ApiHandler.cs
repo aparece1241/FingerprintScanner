@@ -4,7 +4,7 @@ using System.Text;
 using System.Net.Http;
 using System.Collections.Generic;
 
-namespace Enrollement
+namespace Enrollment
 {
     public class ApiHandler
     {
@@ -21,6 +21,7 @@ namespace Enrollement
             this.path = (new Config()).ApiUrl;
             this.client.MaxResponseContentBufferSize = 2000000;
             this.request.Headers.Add("Accept", "application/json");
+            this.request.Headers.Add("User-Agent", "desktop");
             this.request.Headers.Add("Authorization", "Bearer " + (new Config()).ApiAccesssToken);
         }
 
@@ -33,7 +34,7 @@ namespace Enrollement
          * param StringContent  content Request body
          * param KeyValuePair   header
          * 
-         * raturn string        response
+         * raturn String        response
          */
         public KeyValuePair<string, bool> apiRequest(HttpMethod method, string url, StringContent content = null, KeyValuePair<string, string> headers = new KeyValuePair<string, string>())
         {
@@ -52,9 +53,10 @@ namespace Enrollement
                 body.Wait();
 
                 returnVal = new KeyValuePair<string, bool>(body.Result, result.IsSuccessStatusCode);
-                
+                Logger.log(LogType.DEBUG, returnVal.Key, this.GetType().Name);
             } catch (Exception ex)
             {
+                Logger.log(LogType.ERROR, ex.Message, this.GetType().Name);
                 returnVal = new KeyValuePair<string, bool>(ex.Message, false);
             }
 

@@ -4,13 +4,14 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 
-namespace Enrollement
+namespace Enrollment
 {
     class Config
     {
         public string company = ConfigurationSettings.AppSettings["Company"];
         public string ApiUrl = ConfigurationSettings.AppSettings["ApiUrl"];
         public string ApiAccesssToken = ConfigurationSettings.AppSettings["ApiAccessToken"];
+        public string SocketIoServer = ConfigurationSettings.AppSettings["SocketIoServer"];
 
         public string sshServer = ConfigurationSettings.AppSettings["SSHServer"];
         public string sshUserName = ConfigurationSettings.AppSettings["sshUserName"];

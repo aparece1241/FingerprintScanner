@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Enrollement
+namespace Enrollment
 {
     public class AttendanceModel : Model
     {
@@ -21,7 +21,7 @@ namespace Enrollement
 
         public override Model[] getData()
         {
-            return this.dataManager.getAttendancesWithinNDays(4);
+            return this.dataManager.getLatestAttendances();
         }
 
         public override string getFileName()

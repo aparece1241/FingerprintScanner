@@ -99,7 +99,7 @@ namespace Enrollment
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.BackgroundImage = global::Enrollement.Properties.Resources.penal;
+            this.panel4.BackgroundImage = global::Enrollment.Properties.Resources.penal;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.Picture);
@@ -112,7 +112,7 @@ namespace Enrollment
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Enrollement.Properties.Resources.com_logo_clear;
+            this.pictureBox1.BackgroundImage = global::Enrollment.Properties.Resources.com_logo_clear;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(256, 3);
             this.pictureBox1.Name = "pictureBox1";
